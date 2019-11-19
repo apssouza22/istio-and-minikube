@@ -24,6 +24,22 @@ Check the `values-minikube-rac-course.yaml` file to see the values overrided fro
 * Visit $MINIKUBE_IP:31001 on the browser to access Jaeger
 * Visit $MINIKUBE_IP:31002 on the browser to access Grafana
 
+## Install Istio demo
+
+```
+export ISTIO_VERSION=1.3.0
+curl -L https://git.io/getLatestIstio | sh -
+cd istio-$ISTIO_VERSION 
+kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
+kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
+export INGRESS_HOST=$(minikube ip)
+export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
+export GATEWAY=$INGRESS_HOST:$INGRESS_PORT
+echo $GATEWAY/productpage
+```
+
+Visit the address printed on the Browser
+
 
 ## To generate the two yaml files with the last version of Istio
 
