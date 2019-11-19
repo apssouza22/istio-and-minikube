@@ -41,6 +41,14 @@ echo $GATEWAY/productpage
 Visit the address printed on the Browser
 
 
+### Cleanup
+
+* Stopping the application
+``samples/bookinfo/platform/kube/cleanup.sh``
+
+* Remove any kubectl port-forward processes that may be running
+`killall kubectl`
+
 ## To generate the two yaml files with the last version of Istio
 
 * Install helm https://helm.sh/docs/intro/install/
