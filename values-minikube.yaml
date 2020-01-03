@@ -19,6 +19,7 @@ global:
   # if mixer.policy.enabled==true then disablePolicyChecks has affect.
   # Will set the value with same name in istio config map - pilot needs to be restarted to take effect.
   disablePolicyChecks: false
+  controlPlaneSecurityEnabled: true
   mtls:
     enabled: false # We will switch this on later
   proxy:

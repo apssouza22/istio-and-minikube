@@ -3,7 +3,7 @@
 This repository tries to provide a customizable installation and configure an Istio mesh for DEVELOPMENT use. With this configuration you will be able to run Istio on a 4MB cluster
 
 
-Check the `values-minikube-rac-course.yaml` file to see the values overrided from the default Istio installation
+Check the `values-minikube.yaml` file to see the values overrided from the default Istio installation
 
 ### Enabled services: 
 - Grafana
@@ -54,4 +54,4 @@ Visit the address printed on the Browser
 * Install helm https://helm.sh/docs/intro/install/
 * Download and extract the Istio from https://github.com/istio/istio/releases/
 * helm template ./kubernetes/helm/istio-init --name istio-init --namespace istio-system > istio-init.yaml
-* helm template ./kubernetes/helm/istio --name istio --namespace istio-system --values values-minikube-rac-course.yaml > istio-main-minikube-profile.yaml
+* helm template ./kubernetes/helm/istio --name istio --namespace istio-system --values values-minikube.yaml > istio-main-minikube-reduced.yaml
