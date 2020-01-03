@@ -19,6 +19,16 @@ Check the `values-minikube.yaml` file to see the values overrided from the defau
 * `kubectl apply -f 3-kiali-secret.yaml`
 * `kubectl apply -f 4-label-default-namespace.yaml`
 * Wait until all pods are up and running, you can watch it with `kubectl get po -n istio-system -w`
+
+
+## Telemetry
+
+Getting the url to access the systems
+```
+export MINIKUBE_IP=$(minikube ip)
+echo $MINIKUBE_IP
+```
+Visit the address printed on the Browser
 * `minikube ip` 
 * Visit $MINIKUBE_IP:31000 on the browser to access Kiali. credential admin - admin
 * Visit $MINIKUBE_IP:31001 on the browser to access Jaeger
