@@ -9,19 +9,14 @@ gateways:
   istio-ilbgateway:
     autoscaleEnabled: false
 
-tracing:
-  enabled: true
-  ingress:
-    enabled: true
-
 global:
   # disablePolicyChecks disables mixer policy checks.
   # if mixer.policy.enabled==true then disablePolicyChecks has affect.
   # Will set the value with same name in istio config map - pilot needs to be restarted to take effect.
   disablePolicyChecks: false
-  controlPlaneSecurityEnabled: true
+  controlPlaneSecurityEnabled: false
   mtls:
-    enabled: false # We will switch this on later
+    enabled: false
   proxy:
     accessLogFile: "/dev/stdout"
     init:
@@ -50,8 +45,14 @@ mixer:
   policy:
     autoscaleEnabled: false
 
+# Add ons
 grafana:
   enabled: true
 
 kiali:
   enabled: true
+
+tracing:
+  enabled: true
+  ingress:
+    enabled: true
