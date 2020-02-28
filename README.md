@@ -65,3 +65,5 @@ Visit the address printed on the Browser
 * Download and extract the Istio from https://github.com/istio/istio/releases/
 * helm template ./install/kubernetes/helm/istio-init --name istio-init --namespace istio-system > istio-init.yaml
 * helm template ./install/kubernetes/helm/istio --name istio --namespace istio-system --values values-minikube.yaml > 2-istio-main-minikube-reduced.yaml
+
+## That's all. Leave a star if it helped you!
